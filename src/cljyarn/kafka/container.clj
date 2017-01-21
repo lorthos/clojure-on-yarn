@@ -1,4 +1,6 @@
 (ns cljyarn.kafka.container
+  "A simple kafka streams application,
+  can be run as a container on YARN"
   (:gen-class)
   (:require [cljyarn.kafka.serde :as serde :reload-all true]
             [clojurewerkz.propertied.properties :as p]
@@ -21,12 +23,14 @@
                                 .getClass
                                 .getName))))
 
-(defn make-streams [conf
-                    kser
-                    vser
-                    in-topic
-                    out-topic
-                    map-xf]
+(defn make-streams
+  "read from a topic, apply transformer, write to another topic"
+  [conf
+   kser
+   vser
+   in-topic
+   out-topic
+   map-xf]
   (let [ref-conf (refine-config conf kser vser)
         p (p/load-from ref-conf)
         builder (KStreamBuilder.)

@@ -1,4 +1,5 @@
 (ns cljyarn.kafka.basic
+  "A simple application, can be run as a container on YARN"
   (:gen-class))
 
 (defn -main [& args]
