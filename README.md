@@ -9,7 +9,8 @@ Runs Clojure (or other JVM) Apps on YARN.
         hadoop fs -rmr /cljyarn-0.1.0-SNAPSHOT-standalone.jar
         hadoop fs -copyFromLocal target/cljyarn-0.1.0-SNAPSHOT-standalone.jar /cljyarn-0.1.0-SNAPSHOT-standalone.jar
 
-    or
+or
+
         sh package.sh
 
 ### Run on Yarn
